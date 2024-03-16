@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Eventos Académicos</title>
+    <style>
+        .boton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .imagen {
+            width: 100px; 
+            height: auto;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .evento {
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+        }
+
+        .contenedor-imagenes {
+            display: flex;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .contenedor-imagenes img {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Eventos Académicos</h1>
+        
+        <form action="/nuevo">
+            <button type="submit" class="boton">Agregar nuevo evento</button>
+        </form>
+
+        <hr>
+
+        <h2>Eventos Académicos</h2>
+        <ul>
+            {% for evento in eventos %}
+                <li class="evento">
+                    <strong>{{ evento[1] }}</strong> - Fecha: {{ evento[2] }} - Hora: {{ evento[3] }}
+                    <form action="/editar/{{ evento[0] }}" method="GET">
+                        <button type="submit" class="boton">Editar</button>
+                    </form>
+                    <form action="/eliminar/{{ evento[0] }}" method="POST">
+                        <button type="submit" class="boton">Eliminar</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="contenedor-imagenes">
+        <img src="https://mentor.pe/wp-content/uploads/2023/11/UNAS.png" alt="" class="imagen">
+        <img src="https://fiis.unas.edu.pe/sites/all/themes/business_responsive_theme/logo.png" alt="" class="imagen"> 
+    </div>
+</body>
+</html>

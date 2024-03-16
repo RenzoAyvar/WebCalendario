@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Nuevo Evento Académico</title>
+</head>
+<body>
+    <h1>Agregar Nuevo Evento Académico</h1>
+    
+    <!-- Formulario para agregar un nuevo evento -->
+    <form action="/agregar" method="POST">
+        <label for="nombre">Nombre del evento:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="fecha">Fecha del evento:</label>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+        
+        <label for="hora">Hora del evento:</label>
+        <input type="time" id="hora" name="hora" required><br><br>
+        
+        <button type="submit">Agregar evento</button>
+    </form>
+</body>
+</html>
