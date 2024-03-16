@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Evento Académico</title>
+    <title>Editar Evento</title>
 </head>
 <body>
-    <h1>Editar Evento Académico</h1>
-    
-    <!-- Formulario para editar el evento -->
+    <h1>Editar Evento</h1>
     <form action="/editar/{{ evento[0] }}" method="POST">
-        <label for="nombre">Nombre del evento:</label>
-        <input type="text" id="nombre" name="nombre" value="{{ evento[1] }}" required><br><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ evento[1] }}"><br>
         
-        <label for="fecha">Fecha del evento:</label>
-        <input type="date" id="fecha" name="fecha" value="{{ evento[2] }}" required><br><br>
-        
-        <label for="hora">Hora del evento:</label>
-        <input type="time" id="hora" name="hora" value="{{ evento[3] }}" required><br><br>
-        
-        <button type="submit">Guardar cambios</button>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" value="{{ evento[2] }}"><br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" value="{{ evento[3] }}"><br>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" value="{{ evento[4] }}"><br>
+
+        <button type="submit">Guardar Cambios</button>
     </form>
 </body>
 </html>

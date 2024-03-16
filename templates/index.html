@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Eventos Académicos</title>
+    <title>Lista de Eventos Académicos FIIS</title>
     <style>
         .boton {
             background-color: #4CAF50;
@@ -25,9 +25,10 @@
         }
 
         .evento {
-            border: 1px solid #ccc; 
-            padding: 10px; 
-            margin-bottom: 10px; 
+            border: 1px solid #ccc; /* Borde del contenedor */
+            padding: 10px; /* Espacio interno */
+            margin-bottom: 10px; /* Margen inferior */
+            border-radius: 5px; /* Bordes redondeados */      
         }
 
         .contenedor-imagenes {
@@ -55,16 +56,18 @@
         <h2>Eventos Académicos</h2>
         <ul>
             {% for evento in eventos %}
-                <li class="evento">
-                    <strong>{{ evento[1] }}</strong> - Fecha: {{ evento[2] }} - Hora: {{ evento[3] }}
-                    <form action="/editar/{{ evento[0] }}" method="GET">
-                        <button type="submit" class="boton">Editar</button>
-                    </form>
-                    <form action="/eliminar/{{ evento[0] }}" method="POST">
-                        <button type="submit" class="boton">Eliminar</button>
-                    </form>
-                </li>
-            {% endfor %}
+            <li class="evento">
+                <strong>{{ evento[1] }}</strong> - Fecha: {{ evento[2] }} - Hora: {{ evento[3] }}<br>
+                <span>Descripción: {{ evento[4] }}</span>
+                <form action="/editar/{{ evento[0] }}" method="GET">
+                    <button type="submit" class="boton">Editar</button>
+                </form>
+                <form action="/eliminar/{{ evento[0] }}" method="POST">
+                    <button type="submit" class="boton">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+        
         </ul>
     </div>
 
