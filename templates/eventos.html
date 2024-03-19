@@ -53,9 +53,11 @@
     <ul>
         {% for evento in eventos %}
             <div class="evento">
-            <li>
-                <strong>{{ evento[1] }}</strong> - Fecha: {{ evento[2] }} - Hora: {{ evento[3] }} - Descripción: {{ evento[4] }}
-            </li>
+                <li>
+                    <strong>{{ evento[1] }}</strong> - Fecha: {{ evento[2] }} - Hora: {{ evento[3] }}
+                    <br>
+                    Descripción: {{ evento[4] }}
+                </li>
             </div>
         {% endfor %}
     </ul>
