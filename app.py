@@ -26,7 +26,6 @@ def mostrar_eventos():
     conn.close()
     return render_template('eventos.html', eventos=eventos)
 
-
 @app.route('/agregar', methods=['POST'])
 def agregar_evento():
     nombre = request.form['nombre']
@@ -64,6 +63,3 @@ def editar_evento(id):
 @app.route('/nuevo')
 def nuevo_evento():
     return render_template('nuevo.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
